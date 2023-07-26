@@ -31,4 +31,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 
+## Remaining task
+- Review map display functions ( I get a success code but the map doesn't display)
+
+- Problem displaying response after package id search ( I get a success code with my datat but nothing is displayed on the front )
+
+- Same for the web driver
+
+
 

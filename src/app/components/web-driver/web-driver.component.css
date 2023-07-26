@@ -39,7 +39,7 @@
     font-weight: 500;
   }
   
-  .map-container {
+  .wmap-container {
     width: 100%;
     height: 300px;
     border: 1px solid;
@@ -65,3 +65,74 @@
   .wcreate-action-btn:hover {
     opacity: 0.8;
   }
+  
+  .piccreate-action-btn {
+    padding: 10px 35px;
+    background-color: #85a2ec;
+    color: #000;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: -1px 7px 17px -6px rgb(48 48 48 / 87%);
+    transition: all 3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 17px;
+  }
+  
+  .piccreate-action-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .increate-action-btn {
+    padding: 10px 35px;
+    background-color: #f59309;
+    color: #000;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: -1px 7px 17px -6px rgb(48 48 48 / 87%);
+    transition: all 3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 17px;
+  }
+  
+  .increate-action-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .delcreate-action-btn {
+    padding: 10px 35px;
+    background-color: #6aa74f;
+    color: #000;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: -1px 7px 17px -6px rgb(48 48 48 / 87%);
+    transition: all 3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 17px;
+  }
+  
+  .delcreate-action-btn:hover {
+    opacity: 0.8;
+  }
+  .falcreate-action-btn {
+    padding: 10px 35px;
+    background-color: red;
+    color: #000;
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: -1px 7px 17px -6px rgb(48 48 48 / 87%);
+    transition: all 3s ease;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .falcreate-action-btn:hover {
+    opacity: 0.8;
+  }
+  

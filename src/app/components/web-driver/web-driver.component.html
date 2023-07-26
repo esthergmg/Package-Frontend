@@ -1,13 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2>Web Driver</h2>
+<div class="wdriver-container">
+    <form>
       <div>
-        <label for="deliveryId">Rechercher une livraison par ID :</label>
-        <input type="text" id="deliveryId" [(ngModel)]="deliveryId" />
-        <button (click)="searchDelivery()">Rechercher</button>
+
+        <input type="text" id="wdelivery_id" placeholder="Enter Delivery ID" [(ngModel)]="deliveryId" />
+        <button class="wcreate-action-btn" (click)="searchDelivery()">Rechercher</button>
       </div>
-      <div *ngIf="delivery && package">
+    </form>
+  
+    <div class="wdetails-container">
+      <div>
+        <div style="width: 50%">
+          <div *ngIf="delivery && package" class="wdetails">
         <h3>Détails de la livraison</h3>
         <p><strong>ID :</strong> {{ delivery.delivery_id }}</p>
         <p><strong>Statut :</strong> {{ delivery.status }}</p>
@@ -22,62 +25,42 @@
             package.dimensions.width
           }}x{{ package.dimensions.height }} cm
         </p>
+        </div>
+      </div>
+      </div>
+  
+      <div class="wmap-container"></div>
+      <div class="button-actions">
         <div #mapContainer class="map-container"></div>
         <div class="status-buttons">
           <button
+            class="piccreate-action-btn"
             (click)="changeStatus('picked-up')"
             [disabled]="delivery.status !== 'open'"
           >
             Picked Up
           </button>
           <button
+            class="increate-action-btn"
             (click)="changeStatus('in-transit')"
             [disabled]="delivery.status !== 'picked-up'"
           >
             In Transit
           </button>
           <button
+            class="delcreate-action-btn"
             (click)="changeStatus('delivered')"
             [disabled]="delivery.status !== 'in-transit'"
           >
             Delivered
           </button>
           <button
+            class="falcreate-action-btn"
             (click)="changeStatus('failed')"
             [disabled]="delivery.status !== 'in-transit'"
           >
             Failed
           </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="wdriver-container">
-    <form>
-      <div>
-
-        <input type="text" id="deliveryId" [(ngModel)]="deliveryId" />
-        <button (click)="searchDelivery()">Rechercher</button>
-    </form>
-  
-    <div class="details-container">
-      <div>
-        <div style="width: 50%">
-          <app-package-details
-            [details]="deliveryDetails?.data?.package_id"
-          ></app-package-details>
-  
-          <app-delivery-details
-            [details]="deliveryDetails?.data"
-          ></app-delivery-details>
-        </div>
-      </div>
-  
-      <div class="map-container"></div>
-      <div class="button-actions">
-        <div class="action" *ngFor="let item of actionsButtons">
           
         </div>
       </div>
