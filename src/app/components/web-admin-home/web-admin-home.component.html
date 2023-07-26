@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row mt-4"></div>
+
+  <div class="admin-container">
+    <h2 style="margin-bottom: 2rem">Web Admin Home</h2>
+  </div>
+  <div class="admin-details-container">
+    <div class="box-detail-home">
+      <div class="">
+        <h3>Package List</h3>
+        <ul>
+          <li *ngFor="let package of packageList">{{ package.description }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box-detail-home">
+      <div style="padding: inherit">
+        <button
+          type="button"
+          class="create-home-btn"
+          [routerLink]="'/web-admin-create-package'"
+        >
+          Create Package
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="admin-details-container">
+    <div class="box-detail-home">
+      <div class="">
+        <h3>Deliveres List</h3>
+        <ul>
+          <li *ngFor="let delivery of deliveredList">
+            {{ delivery.description }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="box-detail-home">
+      <div style="padding: inherit">
+        <button
+          type="button"
+          class="create-home-btn"
+          [routerLink]="'/web-admin-create-delivery'"
+        >
+          Create Delivere
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

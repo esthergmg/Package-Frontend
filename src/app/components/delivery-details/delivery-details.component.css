@@ -1,0 +1,8 @@
+.delivery-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.delivery-details h2 {
+  font-weight: 500;
+}

@@ -1,0 +1,20 @@
+.create-deli-btn {
+  padding: 10px 35px;
+  background-color: #bcf3a4;
+  color: #000;
+  border-radius: 5px;
+  border-width: 1px;
+  transition: all 3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: right;
+  /* float: left; */
+}
+.div-deli-button {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2rem 0 0;
+}
+.create-deli-btn:hover {
+  opacity: 0.8;
+}

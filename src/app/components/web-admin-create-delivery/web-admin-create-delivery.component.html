@@ -1,0 +1,194 @@
+<style>
+  .container-formpack {
+    width: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: 30rem;
+    padding: 0.75rem 0;
+    margin-top: 20px;
+  }
+
+  .form {
+    /* position: absolute; */
+    max-width: 20rem;
+    width: 100%;
+    padding: 30px;
+
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .forms.show-signup .form.login {
+    opacity: 0;
+    pointer-events: none;
+  }
+  header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+  }
+  form {
+    margin-top: 30px;
+  }
+  .form .field {
+    /* position: relative; */
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+    max-width: 18rem;
+  }
+  .field input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+  }
+  .field input {
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+  }
+  .field input:focus {
+    border-bottom-width: 2px;
+  }
+
+  .content-formpack {
+    padding: 0.5rem 1.25rem;
+    margin-top: 20px;
+  }
+
+  .select-box {
+    width: 100%;
+    height: 50px;
+  }
+
+  @media screen and (min-width: 48em) {
+    .container-formpack {
+      padding: 1.5rem 2rem;
+      margin-top: 30px;
+
+      max-width: 32rem;
+    }
+    .content-formpack {
+      padding: 0 0.5rem;
+    }
+    .form {
+      /* position: absolute; */
+      max-width: 430px;
+      width: 100%;
+      padding: 30px;
+
+      border-radius: 6px;
+      background: #fff;
+    }
+    .forms.show-signup .form.login {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .form .field {
+      /* position: relative; */
+      height: 50px;
+      width: 100%;
+      margin-top: 20px;
+      max-width: 25rem;
+    }
+    .field input {
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+    }
+    .field input {
+      padding: 0 15px;
+    }
+    .field input:focus {
+      border-bottom-width: 2px;
+    }
+  }
+</style>
+
+<div class="container-formpack">
+  <div class="content-formpack">
+    <div style="margin: 0 2rem">
+      <div class="form">
+        <header>Create Package</header>
+        <form (ngSubmit)="createDelivery()">
+          <div class="">
+            <div style="margin: 1rem 0">
+              <label style="margin: 2rem 0">choisir un package</label>
+            </div>
+            <select
+              class="form-control select-box"
+              id="packageId"
+              name="packageId"
+              placeholder="choisir un package"
+              [(ngModel)]="newDelivery.package_id"
+            >
+              <option *ngFor="let package of packageList" [value]="package._id">
+                {{ package.description }}
+              </option>
+            </select>
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="pickupTime"
+              name="pickupTime"
+              placeholder="Pickup Time"
+              [(ngModel)]="newDelivery.pickup_time"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="startTime"
+              name="startTime"
+              placeholder="Start Time"
+              [(ngModel)]="newDelivery.start_time"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="endTime"
+              name="endTime"
+              placeholder="End Time"
+              [(ngModel)]="newDelivery.end_time"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="form-control"
+              id="location"
+              name="location"
+              placeholder="Location"
+              [(ngModel)]="newDelivery.location"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="status"
+              placeholder="Status"
+              name="status"
+              [(ngModel)]="newDelivery.status"
+            />
+          </div>
+
+          <div class="div-deli-button">
+            <button class="create-deli-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

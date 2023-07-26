@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  h1 {
+    color: #007bff;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  
+  /* styles pour le composant "package-details" */
+  .package-details-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .package-details-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .package-details-info {
+    margin-top: 10px;
+  }
+  
+  .package-details-info p {
+    margin: 5px 0;
+  }
+  
+  .delivery-details-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+  }
+  
+  .delivery-details-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .delivery-details-info {
+    margin-top: 10px;
+  }
+  
+  .delivery-details-info p {
+    margin: 5px 0;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

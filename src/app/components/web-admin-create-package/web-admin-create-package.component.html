@@ -1,0 +1,212 @@
+<style>
+  .container-formpack {
+    width: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: 30rem;
+    padding: 0.75rem 0;
+    margin-top: 20px;
+  }
+
+  .form {
+    /* position: absolute; */
+    max-width: 20rem;
+    width: 100%;
+    padding: 30px;
+
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .forms.show-signup .form.login {
+    opacity: 0;
+    pointer-events: none;
+  }
+  header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+  }
+  form {
+    margin-top: 30px;
+  }
+  .form .field {
+    /* position: relative; */
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+    max-width: 18rem;
+  }
+  .field input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+  }
+  .field input {
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+  }
+  .field input:focus {
+    border-bottom-width: 2px;
+  }
+
+  .content-formpack {
+    padding: 0.5rem 1.25rem;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 48em) {
+    .container-formpack {
+      padding: 1.5rem 2rem;
+      margin-top: 30px;
+
+      max-width: 32rem;
+    }
+    .content-formpack {
+      padding: 0 0.5rem;
+    }
+    .form {
+      /* position: absolute; */
+      max-width: 430px;
+      width: 100%;
+      padding: 30px;
+
+      border-radius: 6px;
+      background: #fff;
+    }
+    .forms.show-signup .form.login {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .form .field {
+      /* position: relative; */
+      height: 50px;
+      width: 100%;
+      margin-top: 20px;
+      max-width: 25rem;
+    }
+    .field input {
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+    }
+    .field input {
+      padding: 0 15px;
+    }
+    .field input:focus {
+      border-bottom-width: 2px;
+    }
+  }
+</style>
+
+<div class="container-formpack">
+  <div class="content-formpack">
+    <div style="margin: 0 2rem">
+      <div class="form">
+        <header>Create Package</header>
+        <form (ngSubmit)="createPackage()">
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="description"
+              placeholder="Description"
+              name="description"
+              [(ngModel)]="newPackage.description"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="number"
+              class="input"
+              id="weight"
+              placeholder="Weight (grams)"
+              name="weight"
+              [(ngModel)]="newPackage.weight"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="number"
+              class="input"
+              id="width"
+              placeholder="Width (cm)"
+              name="width"
+              [(ngModel)]="newPackage.width"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="number"
+              class="input"
+              id="height"
+              placeholder="Height (cm)"
+              name="height"
+              [(ngModel)]="newPackage.height"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="number"
+              class="input"
+              id="depth"
+              placeholder="Depth (cm)"
+              name="depth"
+              [(ngModel)]="newPackage.depth"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="fromName"
+              placeholder="From Name"
+              name="fromName"
+              [(ngModel)]="newPackage.from_name"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="fromAddress"
+              placeholder="From Address"
+              name="fromAddress"
+              [(ngModel)]="newPackage.from_address"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="toName"
+              placeholder="To Name"
+              name="toName"
+              [(ngModel)]="newPackage.to_name"
+            />
+          </div>
+          <div class="field input-field">
+            <input
+              type="text"
+              class="input"
+              id="toAddress"
+              placeholder="To Address"
+              name="toAddress"
+              [(ngModel)]="newPackage.to_address"
+            />
+          </div>
+          <div class="div-button">
+            <button class="create-pack-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

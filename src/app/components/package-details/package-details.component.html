@@ -1,0 +1,19 @@
+<div *ngIf="package" class="package-details">
+  <h2>Package Details</h2>
+  <p><strong>ID:</strong> {{ package._id }}</p>
+  <p><strong>Description:</strong> {{ package.description }}</p>
+  <p><strong>Weight:</strong> {{ package.weight }} cm</p>
+  <p>
+    <strong>Dimensions:</strong> {{ package.width }}cm x {{ package.height }}cm
+    x {{ package.depth }}cm
+  </p>
+  <p><strong>From:</strong> {{ package.from_name }}</p>
+  <p><strong>From Address:</strong> {{ package.from_address }}</p>
+  <p><strong>To:</strong> {{ package.to_name }}</p>
+  <p><strong>To Address:</strong> {{ package.to_address }}</p>
+</div>
+
+<div *ngIf="!package" class="package-details">
+  <h2>Package Details</h2>
+  <p>No delivery details available.</p>
+</div>

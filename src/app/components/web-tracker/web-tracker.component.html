@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-4"></div>
+
+  <div class="traker-container">
+    <h2 style="margin-bottom: 2rem">Web Tracker</h2>
+    <form>
+      <div>
+        <input
+          type="text"
+          id="package_id"
+          [(ngModel)]="packageId"
+          name="packageId"
+          placeholder="Enter Package ID"
+          required
+        />
+        <button class="create-action-btn" (click)="trackPackage()">
+          Track
+        </button>
+      </div>
+    </form>
+
+    <div class="details-container">
+      <div style="width: 50%">
+        <app-package-details [package]="package"></app-package-details>
+        <app-delivery-details [delivery]="delivery"></app-delivery-details>
+      </div>
+      <div class="map-container">
+        <div #mapContainer id="mapContainer" style="height: 500px"></div>
+      </div>
+    </div>
+  </div>
+</div>

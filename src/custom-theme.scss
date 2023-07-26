@@ -1,0 +1,21 @@
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+$package-frontend-primary: mat.define-palette(mat.$indigo-palette);
+$package-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$package-frontend-warn: mat.define-palette(mat.$red-palette);
+
+$package-frontend-theme: mat.define-light-theme((
+  color: (
+    primary: $package-frontend-primary,
+    accent: $package-frontend-accent,
+    warn: $package-frontend-warn,
+  )
+));
+
+@include mat.all-component-themes($package-frontend-theme);
+

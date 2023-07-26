@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Web Driver</h2>
+      <div>
+        <label for="deliveryId">Rechercher une livraison par ID :</label>
+        <input type="text" id="deliveryId" [(ngModel)]="deliveryId" />
+        <button (click)="searchDelivery()">Rechercher</button>
+      </div>
+      <div *ngIf="delivery && package">
+        <h3>Détails de la livraison</h3>
+        <p><strong>ID :</strong> {{ delivery.delivery_id }}</p>
+        <p><strong>Statut :</strong> {{ delivery.status }}</p>
+        <p>
+          <strong>Emplacement actuel :</strong> {{ currentLocation | json }}
+        </p>
+        <h3>Détails du colis</h3>
+        <p><strong>ID :</strong> {{ package.package_id }}</p>
+        <p><strong>Poids :</strong> {{ package.weight }} kg</p>
+        <p>
+          <strong>Dimensions :</strong> {{ package.dimensions.length }}x{{
+            package.dimensions.width
+          }}x{{ package.dimensions.height }} cm
+        </p>
+        <div #mapContainer class="map-container"></div>
+        <div class="status-buttons">
+          <button
+            (click)="changeStatus('picked-up')"
+            [disabled]="delivery.status !== 'open'"
+          >
+            Picked Up
+          </button>
+          <button
+            (click)="changeStatus('in-transit')"
+            [disabled]="delivery.status !== 'picked-up'"
+          >
+            In Transit
+          </button>
+          <button
+            (click)="changeStatus('delivered')"
+            [disabled]="delivery.status !== 'in-transit'"
+          >
+            Delivered
+          </button>
+          <button
+            (click)="changeStatus('failed')"
+            [disabled]="delivery.status !== 'in-transit'"
+          >
+            Failed
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wdriver-container">
+    <form>
+      <div>
+
+        <input type="text" id="deliveryId" [(ngModel)]="deliveryId" />
+        <button (click)="searchDelivery()">Rechercher</button>
+    </form>
+  
+    <div class="details-container">
+      <div>
+        <div style="width: 50%">
+          <app-package-details
+            [details]="deliveryDetails?.data?.package_id"
+          ></app-package-details>
+  
+          <app-delivery-details
+            [details]="deliveryDetails?.data"
+          ></app-delivery-details>
+        </div>
+      </div>
+  
+      <div class="map-container"></div>
+      <div class="button-actions">
+        <div class="action" *ngFor="let item of actionsButtons">
+          
+        </div>
+      </div>
+    </div>
+  </div>

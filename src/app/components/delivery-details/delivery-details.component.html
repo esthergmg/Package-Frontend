@@ -1,0 +1,17 @@
+<div *ngIf="delivery" class="delivery-details">
+  <h2>Delivery Details</h2>
+  <p><strong>Delivery ID:</strong> {{ delivery._id }}</p>
+  <p><strong>Package ID:</strong> {{ delivery.package_id }}</p>
+  <p><strong>Pickup Time:</strong> {{ delivery.pickup_time | date }}</p>
+  <p><strong>Start Time:</strong> {{ delivery.start_time | date }}</p>
+  <p><strong>End Time:</strong> {{ delivery.end_time | date }}</p>
+  <p>
+    <strong>Location:</strong> {{ delivery.location.lat }},
+    {{ delivery.location.lng }}
+  </p>
+  <p><strong>Status:</strong> {{ delivery.status }}</p>
+</div>
+<div *ngIf="!delivery">
+  <h2>Delivery Details</h2>
+  <p>No delivery details available.</p>
+</div>
